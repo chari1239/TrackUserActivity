@@ -26,7 +26,6 @@
     "express": "^4.16.3",
     "mongodb": "^3.0.7",
     "mongoose": "^5.0.17",
-    "mongoose-mgo-auto-increment": "^5.1.1",
     "morgan": "^1.9.0",
     "rxjs": "^5.5.6",
     "serve-favicon": "^2.5.0",
