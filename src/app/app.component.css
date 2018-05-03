@@ -1,0 +1,25 @@
+
+.nav-heading {
+    text-align: center;
+    padding-left: 28%;
+    font-family: "Arial" !important;
+    font-size: 39px !important;
+    font-weight: bold !important;
+   letter-spacing: 2px;
+   color: rgb(64, 128, 140);
+}
+
+.home-padding {
+    padding-top: 13px;
+}
+
+.username {
+    text-align: center;
+   float:right;
+   padding-right: 5%;
+    font-family: "Arial" !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+  
+   ;
+}

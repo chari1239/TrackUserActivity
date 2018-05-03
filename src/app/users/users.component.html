@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <router-outlet></router-outlet> -->
+<div class="users">
+<ol class="breadcrumb">
+    <li><a [routerLink]="['/home']" >Home</a></li>
+    <li class="active">Users</li>
+    
+  </ol>
+  </div>
+<div class="container ">
+
+
+  <table class="table" *ngIf="users.length > 0 ; else noUsers">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Place</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.place }}</td>
+        <td>
+            <a [routerLink]="['/users', user._id]" class="btn btn-success">Show Images to be Tracked</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noUsers>  <h4 class="sorry"> Sorry , No Users Found</h4> </ng-template>
+</div>
+

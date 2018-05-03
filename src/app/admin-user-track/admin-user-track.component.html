@@ -1,0 +1,138 @@
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="admin-user-track">
+    <ol class="breadcrumb">
+        <li><a [routerLink]="['/home']" >Home</a></li>
+        <li><a [routerLink]="['/admin']" >Admin</a></li>
+        <li><a [routerLink]="['/admin/users']" >Users</a></li>
+        <li class="active">{{ user.name }} Activity</li>
+        
+      </ol>
+ </div>
+<div class="container">
+  <p class="username inner">{{ user.name }} </p>
+  <button class="btn btn-danger inner" style="float:right" type="button" (click)="deleteUser(user._id)">DELETE ACCOUNT</button>
+  <div class="pills">
+  <ul class="nav nav-pills" style="margin-bottom:5px;padding-bottom:3px; border-bottom:#000000 1px solid">
+    <li role="presentation" (click)="change('events')" [ngClass]="{'active': eventsShow}">
+      <a>All Events <span class="badge"> {{ countEvents }} </span></a></li>
+    <li role="presentation" (click)="change('clicks')" [ngClass]="{'active': clicksShow}" >
+      <a >Clicks  <span class="badge"> {{ countClicks }} </span> </a></li>
+    <li role="presentation" (click)="change('hovers')" [ngClass]="{'active': hoversShow}">
+      <a >Hovers  <span class="badge"> {{ countHovers }} </span></a></li>
+     
+
+
+  </ul>
+
+  <ul *ngIf="clickPillsShow === true" class="nav nav-pills">
+         <li  role="presentation"  (click)="change(4)" [ngClass]="{'active': allShow}"  >
+              <a >All Clicks  <span class="badge"> {{ countClicks }} </span></a></li>
+          <li role="presentation"  (click)="change('left')" [ngClass]="{'active': leftShow}" >
+             <a>Left Clicks <span class="badge"> {{ countleftClicks }} </span></a></li>
+          <li role="presentation"  (click)="change(2)" [ngClass]="{'active': rightShow}" >
+             <a>Right Clicks <span class="badge"> {{ countrightClicks }} </span></a></li>
+          
+          <li role="presentation"  (click)="change(3)" [ngClass]="{'active': doubleShow}" >
+            <a >Double Clicks  <span class="badge"> {{ countdoubleClicks }} </span></a></li>
+          
+          <li  role="presentation" (click)="change(1)" [ngClass]="{'active': middleShow}" >
+            <a >Middle Clicks <span class="badge"> {{ countmiddleClicks }} </span></a></li>
+  </ul>
+</div>
+
+<div *ngIf="eventsShow === true;">
+  <table *ngIf="countEvents > 0; else noEvents"  class="table">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Image</th>
+        <th>Event Type</th>
+        <th> Date &amp; Time</th>
+        
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor="let event of events; let i = index"  [ngClass]="{'activeTable': event.eventType=='click'}">
+        <td>{{ i+1 }}</td>
+        <td> Image{{ event.image}}</td>
+        <td>{{ event.eventType }}</td>
+        <td>{{ event.timeStamp *1000 | date:'medium' }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noEvents>  <h4 class="sorry"> Sorry , No events Found</h4> </ng-template>
+</div>
+
+<div  *ngIf="clicksTableShow === true" >
+
+  <table *ngIf="countClicks > 0 ; else noClicks"  class="table">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Image</th>
+        <th>Click Type</th>
+        <th>Date &amp; Time</th>
+        
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor="let click of clicks ; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>Image{{ click.image}}</td>
+        <td>{{ click.clickType | clickNumToString }}</td>
+        <td>{{ click.timeStamp *1000  | date:'medium' }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noClicks>  <h4 class="sorry"> Sorry , No Click Events Found</h4> </ng-template>
+ </div>
+
+ <div *ngIf="hoversShow === true" >
+  <table *ngIf="countHovers > 0 ; else noHovers"  class="table">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Image</th>
+        <th>Date &amp; Time</th>
+        
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor="let hover of hovers ; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>Image{{ hover.image }}</td>
+        <td>{{ hover.timeStamp * 1000 | date:'medium' }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noHovers>  <h4 class="sorry"> Sorry , No Hovers Found</h4> </ng-template>
+  </div>
+
+
+  <div *ngIf="clickResultsShow === true">
+  <table *ngIf="clickResults.length > 0 ; else noResults"  class="table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Image</th>
+          <th>Date &amp; Time</th>
+          
+        </tr>
+      </thead>
+      <tbody> 
+        <tr *ngFor="let result of clickResults ; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>Image{{result.image }}</td>
+          <td>{{ result.timeStamp * 1000 | date:'medium' }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noResults> <h4 class="sorry"> Sorry , No Events found</h4>;</ng-template>
+  </div>
+</div>
+

@@ -1,0 +1,67 @@
+<div class="user">
+    <ol class="breadcrumb">
+        <li><a [routerLink]="['/home']"  >Home</a></li>
+        <li><a [routerLink]="['/users']" >Users</a></li>
+        <li class="active">{{ user.name }}</li>
+        
+      </ol>
+ </div>
+
+<div  class="container ">
+<div class="user-actions">
+  <h4 class="username inner">{{ user.name }}</h4>
+ 
+  <button class="btn btn-danger inner" style="float:right" type="button" (click)="deleteUser(user._id)">DELETE ACCOUNT</button>
+</div>
+<br>
+  <div class="row">
+     <div  class="col-md-4">
+        <div class="thumbnail " >
+            <img id="image1" class="card-img-top image" src="assets/images/image1.jpg"  alt="Card image1">
+            <div class="card-body">
+             
+              <a class="btn btn-primary imageId" > Image 1</a>
+            </div>
+          </div>
+    </div>
+    <div   class="col-md-4">
+        <div class="thumbnail " >
+            <img id="image2" class="card-img-top image" src="assets/images/image2.jpg" alt="Card image2">
+            <div class="card-body">
+                <a class="btn btn-primary imageId">Image 2</a>
+            </div>
+          </div>
+    </div>
+    <div  class="col-md-4">
+        <div class=" thumbnail " >
+            <img id="image3" class="card-img-top image" src="assets/images/image3.jpg" alt="Card image3">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Card title</h5> -->
+              <a class="btn btn-primary imageId">Image 3</a>
+            </div>
+          </div>
+    </div>
+    <div  class="col-md-4">
+        <div class="thumbnail" >
+            <img id="image4" class="card-img-top image" src="assets/images/image4.jpg" alt="Card image4">
+            <div class="card-body">
+                <a class="btn btn-primary imageId">Image 4</a>
+            </div>
+          </div>
+    </div>
+    <div id="image5" class="col-md-4">
+        <div class="thumbnail ">
+            <img id="image5" class="card-img-top image" src="assets/images/image5.jpg" alt="Card image5">
+            <div class="card-body">
+                <a class="btn btn-primary imageId">Image 5</a>
+            </div>
+          </div>
+    </div>
+    
+   
+   </div>
+  
+  
+    
+</div>
+

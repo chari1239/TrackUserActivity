@@ -1,0 +1,66 @@
+body {
+    background : rgb(64,128, 140);
+}
+.h1-home {
+    padding-top: 60px !important;
+    font-family: "Arial" !important;
+    font-size: 50px !important;
+    font-weight: bold !important;
+}
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+
+.btns, .btn-large {
+    text-decoration: none;
+    color: #fff;
+    font-size:21px;
+    padding:10px 16px 10px 16px;
+    margin-right:4%;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+
+
+.h1 {
+    padding-top: 20px;
+    margin: 0;
+    color: #fff;
+    font-family: "Myriad-light";
+    font-size: 72px;
+    font-weight: 100;
+    line-height: 1;
+    opacity: .9;
+    text-align: center;
+    white-space: initial;
+    width: 100%;
+}
+.h6 {
+    padding-top: 20px;
+    margin: 0;
+    color: #fff;
+    font-family: "Arial" !important;
+    font-size: 40px;
+    font-weight: 100;
+    line-height: 1;
+    opacity: .9;
+    text-align: center;
+    white-space: initial;
+    width: 100%;
+}

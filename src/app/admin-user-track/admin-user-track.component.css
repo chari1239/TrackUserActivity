@@ -1,0 +1,28 @@
+.admin-user-track {
+    padding-top:6%;
+   
+}
+
+.username {
+    font-size:30px;
+    font-family: 'Arial';
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+
+.pills{
+    background: #f1f1f1;
+}
+
+.activeTable {
+    background: rgb(64, 128,140) ;
+    color: #f1f1f1;
+}
+
+.sorry{
+    text-align: center;
+    padding:10%;
+}
